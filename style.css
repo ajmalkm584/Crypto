@@ -1,0 +1,346 @@
+/*
+ * @author: Simran Singh ( simran.singh2198@gmail.com )
+ */
+
+html,
+body {
+
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
+}
+
+
+/* rules for desktop or bigger screens here */
+
+.side-bar {
+    position: fixed;
+    width: 18rem;
+    height: 100%;
+    background-color: #2F3338;
+    /* border-right: 0.2rem solid rgba(220, 74, 79, 0.8); */
+    padding: 0;
+    /* overflow-y: auto;  */
+}
+
+/* Optional: Customize the scrollbar style for better appearance */
+.side-bar .list-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.side-bar .list-container::-webkit-scrollbar-thumb {
+    background: rgba(220, 74, 79, 0.5);
+    border-radius: 5px;
+}
+
+.side-bar .list-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(220, 74, 79, 0.7);
+}
+
+.side-bar .list-container::-webkit-scrollbar-track {
+    background: #252525;
+}
+
+.side-bar-light {
+    background-color: #eee;
+    border-right: none;
+}
+
+.side-bar .list-container {
+    /* margin: 10px 50px; */
+    /* padding-right: 10px; */
+    padding-top: 4rem;
+}
+
+.side-bar .list-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+}
+
+.side-bar .list-container ul li,
+.side-bar .navbar-brand {
+    display: block;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #333;
+
+}
+
+.side-bar-light .list-container ul li,
+.side-bar-light .navbar-brand {
+    border-bottom: 1px solid #bbb;
+}
+
+.side-bar .navbar-brand {
+    padding: 1.3rem;
+    padding-right: 1.5rem;
+    font-family: sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    background: #222;
+}
+
+.side-bar-light .navbar-brand {
+    background: #ddd;
+    color: #111;
+}
+
+
+
+.side-bar .navbar {
+    padding: 0;
+    border: none;
+}
+
+.side-bar .list-container ul li a {
+    display: block;
+    padding: 2rem 4rem;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    border-radius: 100x;
+    /* margin-right: 500px !important; */
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.side-bar-light .list-container ul li a {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+.side-bar .list-container ul li a:hover {
+    background: rgba(86, 220, 74, 0.5);
+    height: auto;
+    border-radius: 10px;
+    /* Ensure the border radius is properly set */
+}
+
+
+
+.bodyContent {
+    /*same as side-bar width*/
+    margin-left: 18rem;
+}
+
+@media screen and (max-width: 991px) {
+
+    /* small screen rules */
+    html {
+        font-size: 12px;
+    }
+
+    .side-bar {
+        top: 0;
+        right: 0;
+        left: 0;
+        height: auto;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .side-bar .list-container {
+        /*now list container acts as side-bar so we apply same css rules as side bar here*/
+        position: fixed;
+        width: 18rem;
+        height: 100%;
+        top: 4rem;
+        left: 0;
+        background-color: #252525;
+        border-right: 0.2rem solid rgba(220, 74, 79, 0.5);
+        padding: 0;
+        margin-left: -18rem;
+        transition: all 0.3s ease;
+    }
+
+    .side-bar-light .list-container {
+        background-color: #eee;
+        border-right: none;
+    }
+
+    .side-bar .navbar {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 4rem;
+        display: flex;
+        padding: 0.7rem 1rem;
+        background: #30343b;
+    }
+
+    .side-bar-light .navbar {
+        background: #ddd;
+    }
+
+    .side-bar-light #toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .side-bar .navbar-brand {
+        display: inline-block;
+        padding: 0.25rem;
+        padding-right: 1rem;
+        margin-left: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+        width: auto;
+        background: none;
+        border: none;
+    }
+
+    .bodyContent {
+        margin-top: 4rem;
+        /*same as side-bar width*/
+        margin-left: 0;
+        transition: all 0.3s ease;
+    }
+
+    .list-toggler {
+        /* important tag is needed here else properties wont overwrite*/
+        margin-left: 0 !important;
+    }
+}
+
+.icon-space {
+    margin-right: 10px;
+    /* Adjust the value as needed */
+}
+
+
+.asa {
+    /* justify-content: right; */
+    /* display: flex; */
+    margin-right: 15px;
+    /* Adjust the value as needed */
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-toggler {
+    color: #fff;
+    font-size: 20px;
+}
+
+/* card silder */
+
+.aa {
+    background: #2F3338;
+
+}
+
+
+.card-body {
+    background-color: #000;
+}
+
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-toggler {
+    background-color: #363a41;
+    /* border-right: 25px solid #dd050500; */
+    /* color: #aba6a6; */
+}
+
+.navbar>.container,
+.navbar>.container-fluid,
+.navbar>.container-lg,
+.navbar>.container-md,
+.navbar>.container-sm,
+.navbar>.container-xl,
+.navbar>.container-xxl {
+    padding: 100px 200px;
+    /* width: 400px; */
+}
+
+.xfr {
+    background: #2F3338 !important;
+    padding: 10px 20px !important;
+    width: 400px !important;
+}
+
+.svg-tading {
+    width: 300px !important;
+    height: auto;
+}
+
+
+.svg-tadings {
+    width: 285px;
+    height: auto;
+}
+
+.spaces {
+    margin-right: 10px;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.fa-search {
+    position: absolute;
+    left: 10px;
+    /* Adjust this value as needed */
+    color: gray;
+    /* Change this to your desired icon color */
+}
+
+.custom-border::placeholder {
+    padding-left: 10px;
+    color: #fff !important;
+    /* Change this to your desired color */
+}
+
+
+.custom-border {
+    border-radius: 10px !important;
+    border: 1.5px solid #fff !important;
+}
+
+@media screen and (max-width: 1184px) {
+    .xfr {
+        width: 200px !important;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .space-text {
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .svg-tadings {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .navbar>.container,
+    .navbar>.container-fluid,
+    .navbar>.container-lg,
+    .navbar>.container-md,
+    .navbar>.container-sm,
+    .navbar>.container-xl,
+    .navbar>.container-xxl {
+        padding: 0px 0px;
+        /* width: 400px; */
+    }
+}
